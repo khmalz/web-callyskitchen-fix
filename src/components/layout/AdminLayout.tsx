@@ -165,8 +165,11 @@ export const AdminLayout: React.FC = () => {
               </span>
             </div>
             <button
-              onClick={() => logout()}
-              className="p-2 text-cream-400 hover:text-red-400 rounded-lg transition-colors"
+              onClick={async () => {
+                await logout()
+                navigate('/', { replace: true })
+              }}
+              className="p-2 text-cream-400 hover:text-red-400 rounded-lg transition-colors cursor-pointer"
               title="Logout"
             >
               <LogOut className="w-4 h-4" />
