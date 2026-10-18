@@ -1,8 +1,7 @@
 -- ==============================================================================
 -- CARA MEMBERIKAN ROLE ADMIN SECARA AMAN DI SUPABASE SQL EDITOR
 -- ==============================================================================
--- 1. Buka Supabase Dashboard: https://icnbtgkzzocjgjosenca.supabase.co
--- 2. Masuk ke menu SQL Editor -> New Query
+-- 1. Buka Supabase Dashboard proyek Anda -> SQL Editor -> New Query
 -- 3. Ganti 'admin@callskitchen.com' di bawah ini dengan email akun yang sudah terdaftar
 -- 4. Klik 'Run'
 

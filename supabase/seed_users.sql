@@ -1,7 +1,6 @@
 -- ==============================================================================
 -- CALLS KITCHEN - SEEDER DATA PENGGUNA (ADMIN & CUSTOMER)
--- Buka Supabase Dashboard -> SQL Editor -> New Query -> Tempel dan klik Run
--- URL SQL Editor: https://supabase.com/dashboard/project/icnbtgkzzocjgjosenca/sql/new
+-- Buka menu SQL Editor di Supabase Dashboard -> New Query -> Tempel dan klik Run
 -- ==============================================================================
 
 CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA extensions;

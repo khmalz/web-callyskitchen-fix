@@ -124,8 +124,8 @@ Copy-Item .env.example .env
 Isi variabel di file `.env`:
 
 ```env
-# Supabase URL (Sudah diset sesuai proyek Anda):
-VITE_SUPABASE_URL=https://icnbtgkzzocjgjosenca.supabase.co
+# Supabase URL:
+VITE_SUPABASE_URL=https://your-project.supabase.co
 
 # Anon / Public API Key Supabase (Dapatkan dari Supabase Dashboard -> Project Settings -> API):
 VITE_SUPABASE_ANON_KEY=masukkan_anon_key_anda_di_sini
@@ -143,11 +143,12 @@ VITE_PAYMENT_ENVIRONMENT=sandbox
 ## 6. CARA MENGHUBUNGKAN PROYEK SUPABASE
 
 1. Buka browser dan login ke [Supabase Dashboard](https://supabase.com/dashboard).
-2. Buka proyek Anda: `https://icnbtgkzzocjgjosenca.supabase.co`.
+2. Buka proyek Supabase Anda.
 3. Buka menu **Project Settings** (ikon gerigi di kiri bawah) -> **API**.
 4. Salin **Project URL** dan **Project API Keys (`anon` / `public`)**.
-5. Buka file `.env` di VS Code, lalu tempelkan nilai `anon key` pada baris:
-   `VITE_SUPABASE_ANON_KEY=...`
+5. Buka file `.env` di VS Code, lalu tempelkan nilainya:
+   - `VITE_SUPABASE_URL=...`
+   - `VITE_SUPABASE_ANON_KEY=...`
 6. Restart server development (`Ctrl + C` lalu `npm run dev`).
 
 ---
@@ -158,7 +159,7 @@ Seluruh skema tabel, indeks performa, fungsi pengurangan stok atomik, pemicu pem
 `supabase/migrations/20261018000000_calls_kitchen_schema.sql`.
 
 ### Langkah Eksekusi:
-1. Buka [Supabase Dashboard SQL Editor](https://icnbtgkzzocjgjosenca.supabase.co/project/sql).
+1. Buka menu **SQL Editor** di Supabase Dashboard proyek Anda.
 2. Klik tombol **New Query**.
 3. Buka file `supabase/migrations/20261018000000_calls_kitchen_schema.sql` di editor, salin seluruh kodenya, lalu tempelkan di SQL Editor Supabase.
 4. Klik tombol **Run**.
