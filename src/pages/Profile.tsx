@@ -85,9 +85,7 @@ export const Profile: React.FC = () => {
         const localOrders: Order[] = JSON.parse(
           localStorage.getItem('calls_kitchen_local_orders') || '[]'
         )
-        const userOrders = localOrders.filter(
-          (o) => o.user_id === user.id || o.user_id.startsWith('usr-') || o.user_id.startsWith('guest-')
-        )
+        const userOrders = localOrders.filter((o) => o.user_id === user.id)
         setOrders(userOrders)
       } catch {
         setOrders([])
