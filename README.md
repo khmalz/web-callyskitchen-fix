@@ -210,6 +210,14 @@ WHERE role = 'customer'
 
 4. Setelah query berhasil dijalankan, login kembali menggunakan akun tersebut. Akun akan otomatis memiliki akses penuh ke `/admin` dan navigasi panel admin akan muncul di navbar.
 
+### Seeder Pengguna Otomatis (Admin & Pelanggan):
+Tersedia file [seed_users.sql](file:///c:/Users/User/projects/kelarin/bug-fix/web-callyskitchen-fix/supabase/seed_users.sql) untuk membuat akun Admin dan Pelanggan sekaligus tanpa perlu konfirmasi email:
+- Buka **Supabase SQL Editor** -> Buka file `supabase/seed_users.sql` -> Salin dan jalankan (*Run*).
+- Akun yang dibuat:
+  - **Admin:** `admin@callskitchen.com` / `admin.callskitchen@gmail.com` (Password: `Password123!`)
+  - **Pelanggan:** `budi.santoso@gmail.com` (Password: `Password123!`)
+  - **Pelanggan:** `siti.rahma@gmail.com` (Password: `Password123!`)
+
 ---
 
 ## 10. CARA MENGONFIGURASI SUPABASE STORAGE (FOTO PRODUK)

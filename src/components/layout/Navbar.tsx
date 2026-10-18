@@ -44,9 +44,7 @@ export const Navbar: React.FC = () => {
             localStorage.getItem('calls_kitchen_local_orders') || '[]'
           )
           count = localOrders.filter(
-            (o: any) =>
-              (o.user_id === user.id || o.user_id?.startsWith('usr-') || o.user_id?.startsWith('guest-')) &&
-              o.payment_status === 'pending'
+            (o: any) => o.user_id === user.id && o.payment_status === 'pending'
           ).length
         } catch {
           // Ignore
