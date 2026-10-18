@@ -1,14 +1,16 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js'
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://icnbtgkzzocjgjosenca.supabase.co'
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || ''
+const supabaseAnonKey =
+  import.meta.env.VITE_SUPABASE_ANON_KEY ||
+  import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY ||
+  ''
 
 export const isSupabaseConfigured = (): boolean => {
   return Boolean(
     supabaseUrl && 
     supabaseUrl !== 'https://your-project.supabase.co' && 
     supabaseAnonKey && 
-    supabaseAnonKey !== 'sb_publishable_eyMFNL1fGiVw6IqCBy6DeQ_WNzIJXDX' &&
     supabaseAnonKey.length > 20
   )
 }

@@ -184,11 +184,28 @@ Role pengguna tidak boleh diubah dari browser demi keamanan. Untuk memberikan ha
 3. Jalankan query berikut (tersedia juga di `supabase/grant_admin.sql`):
 
 ```sql
+-- 1. Update role yang sudah ada menjadi 'admin'
+UPDATE public.user_roles
+SET role = 'admin'
+WHERE user_id IN (
+    SELECT id FROM auth.users WHERE email = 'admin@callskitchen.com'
+);
+
+-- 2. Sisipkan baris admin jika akun belum memiliki baris role
 INSERT INTO public.user_roles (user_id, role)
 SELECT id, 'admin'
 FROM auth.users
 WHERE email = 'admin@callskitchen.com'
-ON CONFLICT (user_id, role) DO UPDATE SET role = 'admin';
+  AND NOT EXISTS (
+    SELECT 1 FROM public.user_roles r WHERE r.user_id = auth.users.id
+  );
+
+-- 3. Hapus duplikasi role 'customer' jika sebelumnya sempat tersimpan ganda
+DELETE FROM public.user_roles
+WHERE role = 'customer'
+  AND user_id IN (
+    SELECT id FROM auth.users WHERE email = 'admin@callskitchen.com'
+  );
 ```
 
 4. Setelah query berhasil dijalankan, login kembali menggunakan akun tersebut. Akun akan otomatis memiliki akses penuh ke `/admin` dan navigasi panel admin akan muncul di navbar.
