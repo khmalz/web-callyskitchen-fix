@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="heroGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FDE68A" stop-opacity="0.5" />
+      <stop offset="70%" stop-color="#FBF8F1" stop-opacity="0" />
+    </radialGradient>
+    <filter id="heroShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#2A1F18" flood-opacity="0.16" />
+    </filter>
+  </defs>
+
+  <!-- Ambient Glow -->
+  <circle cx="400" cy="300" r="320" fill="url(#heroGlow)" />
+
+  <!-- Wooden Snack Board / Serving Plate Base -->
+  <ellipse cx="400" cy="460" rx="340" ry="70" fill="#E5D5C5" opacity="0.6" />
+  <ellipse cx="400" cy="450" rx="320" ry="60" fill="#DFCFA8" opacity="0.8" />
+
+  <!-- Banana Chips Stand Pouch (Left) -->
+  <g transform="translate(180, 100) rotate(-6)" filter="url(#heroShadow)">
+    <path d="M40,30 L200,30 L212,280 C212,295 200,305 185,305 L55,305 C40,305 28,295 28,280 Z" fill="#FFFBEB" stroke="#DFCFA8" stroke-width="2" />
+    <path d="M35,30 L205,30 L205,45 L35,45 Z" fill="#D9822B" rx="3" />
+    <rect x="55" y="60" width="130" height="32" rx="16" fill="#2A1F18" />
+    <text x="120" y="81" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="12" fill="#FDF8F1" text-anchor="middle" letter-spacing="1">CALLS KITCHEN</text>
+    <rect x="65" y="102" width="110" height="22" rx="11" fill="#F59E0B" />
+    <text x="120" y="117" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="9" fill="#FFFFFF" text-anchor="middle">KERIPIK PISANG</text>
+    <ellipse cx="120" cy="205" rx="50" ry="32" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3,3" />
+    <ellipse cx="110" cy="205" rx="20" ry="11" fill="#FDE047" stroke="#CA8A04" stroke-width="1.5" transform="rotate(-15 110 205)" />
+    <ellipse cx="135" cy="202" rx="18" ry="10" fill="#FEF08A" stroke="#CA8A04" stroke-width="1.5" transform="rotate(20 135 202)" />
+    <ellipse cx="122" cy="210" rx="22" ry="12" fill="#FACC15" stroke="#D97706" stroke-width="1.5" />
+    <text x="120" y="275" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11" fill="#78350F" text-anchor="middle">Cokelat &amp; Original</text>
+  </g>
+
+  <!-- Cassava Chips Stand Pouch (Right) -->
+  <g transform="translate(420, 110) rotate(7)" filter="url(#heroShadow)">
+    <path d="M40,30 L200,30 L212,280 C212,295 200,305 185,305 L55,305 C40,305 28,295 28,280 Z" fill="#FEF2F2" stroke="#FECACA" stroke-width="2" />
+    <path d="M35,30 L205,30 L205,45 L35,45 Z" fill="#DC2626" rx="3" />
+    <rect x="55" y="60" width="130" height="32" rx="16" fill="#2A1F18" />
+    <text x="120" y="81" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="12" fill="#FDF8F1" text-anchor="middle" letter-spacing="1">CALLS KITCHEN</text>
+    <rect x="60" y="102" width="120" height="22" rx="11" fill="#B91C1C" />
+    <text x="120" y="117" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="8.5" fill="#FFFFFF" text-anchor="middle">KERIPIK SINGKONG</text>
+    <ellipse cx="120" cy="205" rx="50" ry="32" fill="#FFF1F2" stroke="#E11D48" stroke-width="1.5" stroke-dasharray="3,3" />
+    <path d="M95,205 C100,195 115,192 128,198 C138,202 145,198 150,206 C145,216 130,220 118,215 C108,212 98,216 95,205 Z" fill="#FEF08A" stroke="#CA8A04" stroke-width="1.5" />
+    <text x="120" y="275" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11" fill="#991B1B" text-anchor="middle">Pedas Daun Jeruk &amp; BBQ</text>
+  </g>
+
+  <!-- Serving Bowl with overflowing crispy chips in center front -->
+  <g transform="translate(280, 360)" filter="url(#heroShadow)">
+    <ellipse cx="120" cy="60" rx="110" ry="35" fill="#2A1F18" />
+    <ellipse cx="120" cy="55" rx="104" ry="30" fill="#3D2F25" />
+    
+    <!-- Crispy Banana Chips overflowing -->
+    <ellipse cx="80" cy="45" rx="26" ry="14" fill="#FACC15" stroke="#CA8A04" stroke-width="1.5" transform="rotate(-25 80 45)" />
+    <ellipse cx="110" cy="38" rx="28" ry="15" fill="#FDE047" stroke="#CA8A04" stroke-width="1.5" transform="rotate(10 110 38)" />
+    <ellipse cx="145" cy="42" rx="25" ry="14" fill="#EAB308" stroke="#A16207" stroke-width="1.5" transform="rotate(35 145 42)" />
+    
+    <!-- Crispy Cassava Chips with chili flakes -->
+    <path d="M100,40 C110,28 135,28 150,38 C140,50 115,50 100,40 Z" fill="#FBBF24" stroke="#D97706" stroke-width="1.5" />
+    <circle cx="118" cy="34" r="1.5" fill="#DC2626" />
+    <circle cx="132" cy="38" r="1.5" fill="#DC2626" />
+    <circle cx="126" cy="42" r="1.5" fill="#16A34A" />
+  </g>
+
+  <!-- Floating crispy pieces -->
+  <ellipse cx="140" cy="220" rx="18" ry="10" fill="#FACC15" stroke="#CA8A04" stroke-width="1" transform="rotate(-35 140 220)" />
+  <ellipse cx="680" cy="240" rx="20" ry="11" fill="#F59E0B" stroke="#B45309" stroke-width="1" transform="rotate(25 680 240)" />
+  <ellipse cx="640" cy="420" rx="16" ry="9" fill="#DC2626" opacity="0.9" transform="rotate(-15 640 420)" />
+  <circle cx="160" cy="380" r="3" fill="#DC2626" />
+  <circle cx="650" cy="320" r="4" fill="#D9822B" />
+</svg>

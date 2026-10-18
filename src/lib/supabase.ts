@@ -1,0 +1,40 @@
+import { createClient, SupabaseClient } from '@supabase/supabase-js'
+
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://icnbtgkzzocjgjosenca.supabase.co'
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || ''
+
+export const isSupabaseConfigured = (): boolean => {
+  return Boolean(
+    supabaseUrl && 
+    supabaseUrl !== 'https://your-project.supabase.co' && 
+    supabaseAnonKey && 
+    supabaseAnonKey !== 'sb_publishable_eyMFNL1fGiVw6IqCBy6DeQ_WNzIJXDX' &&
+    supabaseAnonKey.length > 20
+  )
+}
+
+let clientInstance: SupabaseClient | null = null
+
+export const getSupabase = (): SupabaseClient => {
+  if (!clientInstance) {
+    if (!isSupabaseConfigured()) {
+      console.warn(
+        '[Calls Kitchen] Supabase anon key is not yet configured. The app will use local state mode. Add VITE_SUPABASE_ANON_KEY to .env to connect to live Supabase backend.'
+      )
+    }
+    clientInstance = createClient(
+      supabaseUrl, 
+      supabaseAnonKey || 'placeholder-anon-key-calls-kitchen-2026', 
+      {
+        auth: {
+          persistSession: true,
+          autoRefreshToken: true,
+          detectSessionInUrl: true,
+        },
+      }
+    )
+  }
+  return clientInstance
+}
+
+export const supabase = getSupabase()
